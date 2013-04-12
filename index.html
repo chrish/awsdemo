@@ -1,0 +1,235 @@
+﻿<!doctype html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1680" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Amazon Web Services (AWS)</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body>
+<div id="impress">
+
+    <div id="title" class="step" data-x="0" data-y="000" data-scale="4">
+        <img src="awslogo_s.png" alt="" />
+    </div>
+	
+	<div id="meg" class="step slide" data-x="5000" data-y="-4000" data-scale="4" data-z="0" >
+		<h1>Min bakgrunn</h1>
+		<img src="flyt.png" alt="" class="right" />
+		<ul>
+			<li>Utvikler og driftsansvarlig på prosjekt med Barlind, Nettavisen og datavarehus i DK fom. høsten 2009</li>
+			<li>Skulle opprinnelig hostes lokalt i Kristiansand, men...</li>
+			<li>Utfordring: Finn hostingløsning. Kriterier:
+				<ul class="tinylist">
+					<li>Ingen innkjøp av HW</li>
+					<li>Vi måtte ha full kontroll over løsningen</li>
+				</ul>
+			</li>
+			<li>Løsning lansert i mai 2010:
+				<ul class="tinylist">
+					<!--<li>15.000 reg. brukere i oktober</li>-->
+					<li>50.000 reg. brukere i mars 2011</li>
+					<li>90.000+ i juni 2012</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="hva" class="step slide" data-x="5000" data-y="4000" data-scale="4" data-z="0" >
+		<h1>Cloud Computing - kort innføring</h1>
+		<img src="loadeks.png" alt="" class="right" />
+		<ul id="">
+			<li>Handler om IT-drift; dukket opp rundt 2006, tok av rundt 2009.</li>
+			<li>Står i sterk kontrast til trad. drift som krever store investeringer for å komme igang/skalere</li>
+			<li>Kort oppsumert: Datakraft blir en ressurs på linje med strøm.  
+			    <emp>Bruk det du trenger, betal for det du bruker</emp>
+		    </li>
+			<li>Flere modeller; viktigste er IaaS og PaaS (Infrastructure/Platform as a Service)</li>
+		</ul>
+	</div>
+	
+	<div id="toolbox" class="step slide" data-rotate="90" data-x="14000" data-y="0" data-scale="10" data-z="7000" >
+		<img src="awslogo.png" alt="" class="rot90 left" />
+		<img id="awsmap" src="Aws_region_map.png" alt="" width="600px" class="right" />
+		<ul class="r90offset">
+			<li>Hva er AWS?
+				<ul class="tinylist">
+					<li>30+ ulike tjenester innenfor virtualisering, database, datalagring/content delivery, applikasjonstjenester++</li>
+					<li>Hovedfokus er virtualisering (EC2) og datalagring (S3)</li>
+					<li>Tilgjengelig gjennom dashboard, webservices og developer tools (kommandolinje)</li>
+					<li>Regioner og soner</li>
+				</ul>
+			</li>		
+			<li> 
+				Husk:
+				<ul class="tinylist">
+					<li>Elastic Beanstalk</li>
+					<li>AWS Free Tier - Gratis tilgang <br/>i et år</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="ec2" class="step slide" data-x="17600" data-y="8000" data-scale="2" data-z="7000" data-rotate="90" >
+		<h1>Elastic Compute Cloud (EC2)</h1>
+		<ul id="">
+			<li>Virtualiseringstjeneste; blant de første tjenestene i AWS</li>
+			<li>Baserer seg på Amazon Machine Images (AMIs)
+				<ul class="tinylist">
+					<li>Offisielle AMIs</li>
+					<li>Community / Marketplace</li>
+				</ul>
+			</li>
+			<li>15 ulike maskintyper (i EU)</li>
+			<li>Kan skaleres etter behov (AutoScale)</li>
+			<li>Kan kobles med Elastic Load Balancer for lastbalansering</li>
+		</ul>
+		
+	</div>
+	
+	<div id="ec2p" class="step slide" data-x="15300" data-y="8000" data-scale="2" data-z="7000" data-rotate="90" >
+		<h1>EC2 - Prising</h1>
+		<ul>
+			<li>Betales per påbegynte time</li>
+			<li>Prismodeller: on demand, reserved og spot</li>
+		</ul>
+		<p class="center"><img src="ec2_prices.png" alt="" /><img src="ec2_prices_res.png" alt="" /></p>
+	</div>
+	
+	<div id="s3" class="step slide" data-x="12900" data-y="8000" data-scale="2" data-z="7000" data-rotate="90" >
+		<h1>Lagringstjenester</h1>
+		<ul>
+			<li>Elastic Block Storage (EBS), Simple Storage Service (S3)</li>
+			<li>EBS mountes direkte på EC2; maks 2 TB per volum. Kan klones og snapshottes</li>
+			<li>S3 brukes typisk for statiske filer; uendelig kapasitet</li>
+			<li>Glacier</li>
+		</ul>
+		<p class="center"><img src="aws_ec2_components.png" alt="" /></p>
+	</div>
+	
+	<div id="db" class="step slide" data-x="10600" data-y="8000" data-scale="2" data-z="7000" data-rotate="90" >
+		<h1>Databasetjenester</h1>
+		<ul>
+			<li>Amazon Relational Database Service (RDS, SQL), DynamoDB (NoSQL) og Redshift (Datavarehus)</li>
+			<li>RDS er instansbasert (tilsvarende EC2); DynamoDB er en ren service; Redshift er clusterbasert</li>
+			<li>RDS har maksbegrensning på 3TB, DynamoDB 5PB+, Redshift max 1,6PB per cluster</li>
+		</ul>
+		<p class="center"><img src="aws_ec2_components.png" alt="" /></p>
+	</div>
+	
+	
+	<div id="erfaringer" class="step slide" data-x="13000" data-y="17250" data-scale="3" data-z="-10000" data-rotate="90" >
+		<h1>Erfaringer og utfordringer</h1>
+		<ul>
+			<li>Feil vil oppstår; soner og regioner vil gå ned</li>
+			<li>God planlegging og risikovurdering er et must</li>
+			<li>Applikasjoner må tilpasses</li>
+			<li>Økonomi</li>
+		</ul>
+		<img src="np_arch.png" alt=="" />
+	</div>
+	
+	<div id="overfladisk" class="step slide" data-x="13000" data-y="17250" data-scale="1" data-z="-20000" data-rotate="90" >
+		<div id="overfladisk2">
+			<h1>Dette var kjapt og overfladisk!</h1>
+			<p>Om noen ønsker mer info eller grundigere gjennomgang, ta kontakt!</p>
+				<p>Sjekk uansett ut aws.amazon.com</p>
+			<img id="awslogosmall" src="awslogo.png" alt="" width="200px" />
+		</div>
+	</div>
+	
+	
+	
+	<div id="overview" class="step" data-scale="35"></div>
+	
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>

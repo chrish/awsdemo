@@ -1,0 +1,47 @@
+AWS
+
+Den neste timen...
+	-Litt om Cloud generelt
+	-Litt om AWS og min bakgrunn
+	-Demoer
+
+AWS intro
+	AWS er Amazons satsning på cloudtjenester
+	IaaS, si litt om PaaS og hva som skiller dem
+	Litt om cloud generelt; når det startet, og hva det går i 
+
+Hvorfor
+	-Økonomi
+	-Fleksibilitet
+	-Muligheter for redundans og nærhet til brukere	
+	
+Min bakgrunn
+	-NP
+		:Webportal i samarbeid med Nettavisen og dk datavarehus
+		:Skulle hostes lokalt frem til vi regnet på trafikkprognoser
+		:Utfordring: Finne løsning på hosting som ikke innebar kjøp av ny HW men som fremdeles ga oss 
+		 full kontroll.
+		:Løsning: AWS
+		:Vise utvikling fra launch til jeg sluttet.
+Mer om cloud
+	-SAAS, PAAS, IAAS; første er ikke relevant, andre er relevant men ikke aktuell for AWS
+	-Hvorfor bruke cloud? 
+	-Trad. drift caser:
+		-Ny tjeneste/applikasjon;
+			Netflix, annet
+		-Større batchjobber; 
+			-NYTimes, alle PD artikler 1851-1922 skulle tilgjengeliggjøres; totalt 405000 TIFF-bilder; 3,3 mill. artikler fra OCR. Alt må parses, png-bilder og js med imagemaps må lages. 
+	
+		-Skalering kan være et sjansespill; for mye HW er sløsing med penger, 
+		 for lite = utilgjengelig tjeneste
+
+EC2
+
+S3
+
+EBS
+
+ELB
+
+Autoscale
+
